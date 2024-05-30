@@ -6,6 +6,8 @@ const port = 3000;
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 
+app.get("/", (req, res) => res.redirect("/index"));
+
 app.get("/error-:code", (req, res) => {
   res.render("error-" + req.params.code);
 });
